@@ -1,25 +1,35 @@
 import React from 'react';
-import logo from './logo.svg';
+import Clock from 'react-live-clock';
+import { Grid } from '@material-ui/core';
 import './App.css';
+import Critters from './Critters'; 
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+      {/* <header className="App-header"> */}
+      <header>
+        <h1>Now Available</h1>
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          View critters available <i>now</i>
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <Clock format={'HH:mm:ss'} ticking={true} />
       </header>
-    </div>
+
+      <br></br>
+
+        <Grid container spacing={2}>
+            <Grid item xs={6}> 
+              <b>Fish</b>
+              <Critters type='fish'/>
+            </Grid>
+            <Grid item xs={6}>
+              <b>Bugs</b>
+              <Critters type='bug'/>
+            </Grid>
+        </Grid>
+
+      </div>
   );
 }
 

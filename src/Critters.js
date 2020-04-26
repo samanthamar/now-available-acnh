@@ -3,6 +3,20 @@ import './Critters.css';
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@material-ui/core';
 import { bugObjs, fishObjs } from './AllCritters.js'
 
+const bugImg = "https://acnhcdn.com/latest/BookInsectIcon/"
+const fishImg = "https://acnhcdn.com/latest/BookFishIcon/"
+
+function createImgLink (critter, filename) {
+    let link
+    if (critter == 'fish') {
+        link = fishImg + filename + '.png'
+    } else {
+        link = bugImg + filename + '.png'
+    }
+    console.log(link)
+    return link 
+}
+
 const monthNames = ["jan", "feb", "mar", "apr", "may", "jun",
   "jul", "aug", "sep", "oct", "nov", "dec"
 ]
@@ -54,6 +68,7 @@ function availableCritters(time, hemisphere, curMonth, critter) {
             }
         }
     } ); 
+
     return available 
 }
 
@@ -68,6 +83,7 @@ function Critters(props) {
                 <TableRow>
                     <TableCell align="center">id</TableCell>
                     <TableCell align="center">{props.type}</TableCell>
+                    <TableCell align="center">image</TableCell>
                     <TableCell align="center">value</TableCell>
                     <TableCell align="center">location</TableCell>
                     {/* <TableCell>Image</TableCell>
@@ -84,6 +100,7 @@ function Critters(props) {
                     {row.id}
                 </TableCell>
                 <TableCell align="center">{row.name}</TableCell>
+                <TableCell align="center"><img className='CritterIcon' src={createImgLink(props.type, row.fileName)}></img></TableCell>
                 <TableCell align="center">{row.value}</TableCell>
                 <TableCell align="center">{row.location}</TableCell>
                 </TableRow>

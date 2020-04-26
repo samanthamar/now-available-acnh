@@ -10,7 +10,7 @@ function createCritterObj(id, name, value,
     nh_oct, nh_nov, nh_dec, sh_jan, 
     sh_feb, sh_mar, sh_apr, sh_may, 
     sh_jun, sh_jul, sh_aug, sh_sep, 
-    sh_oct, sh_nov, sh_dec) {
+    sh_oct, sh_nov, sh_dec, fileName) {
     return { id, name, 
         value, location, 
         shadow, precipitation, 
@@ -26,7 +26,7 @@ function createCritterObj(id, name, value,
         sh_may, sh_jun, 
         sh_jul, sh_aug, 
         sh_sep, sh_oct, 
-        sh_nov, sh_dec }
+        sh_nov, sh_dec, fileName }
 } 
 
 function createFishes() {
@@ -64,7 +64,8 @@ function createFishes() {
              f["SH Sep"],
              f["SH Oct"],
              f["SH Nov"],
-             f["SH Dec"],)
+             f["SH Dec"],
+             f["Critterpedia Filename"])
         fishes.push(fish_obj)
     })
 
@@ -106,7 +107,8 @@ function createBugs() {
              f["SH Sep"],
              f["SH Oct"],
              f["SH Nov"],
-             f["SH Dec"],)
+             f["SH Dec"],
+             f["Critterpedia Filename"])
         bugArr.push(bug_obj)
     })
 

@@ -1,3 +1,8 @@
-.Critters {
+/* .Critters {
     background-color: #03fca5
+} */
+
+.CritterIcon {
+    height: 60px;
+    width: 60px;
 }
